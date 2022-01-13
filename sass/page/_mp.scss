@@ -1,0 +1,252 @@
+//block02 輪播新聞稿
+.block02 {
+    z-index: 99;
+    // position: relative;
+    .col:first-child {
+        .more {
+            display: none;
+        }
+    }
+}
+.col-8-4 {
+    .container {
+        padding-top: 15px;
+    }
+    .bigbannerblock {
+        @include make-xs-column(12);
+        @include make-sm-column(12); //768px  width:66.6%
+        @include make-md-column(12); //992px  width:66.6%
+        @include make-lg-column(12); //1400px width:66.6%
+        @include gutter(); //gutter 代表左右要留白
+    }
+}
+//block03 新聞稿
+.block03 {
+    margin: 0;
+    position: relative;
+    z-index: 99;
+    >.container {
+        padding-bottom: 30px;
+        padding-top: 30px;
+        .news {
+            h2 {
+                color: $primaryColor;
+                font-weight: 600;
+                text-align: left;
+                border-bottom: 8px solid $primaryColor;
+                background-color: transparent;
+                margin: 0 0 10px;
+                padding: 0 0 5px;
+            }
+            ul {
+                margin: 0 0 10px;
+                padding: 0;
+                li {
+                    list-style-type: none;
+                    border-bottom: 1px dotted #666;
+                    font-size: 0.938em;
+                    height: auto;
+                    a {
+                        display: block;
+                        padding: 6px 0 6px 0px;
+                        span {
+                            margin-left: 0px;
+                            margin-right: 10px;
+                            color: #666;
+                            display: block;
+                        }
+                    }
+                }
+            }
+            .more {
+                a {
+                    background-image: url('../images/nav_icon02_01.png');
+                    background-repeat: no-repeat;
+                    background-position: 0 3px;
+                    color: #333;
+                    background-color: transparent;
+                    padding: 0px 0 0 25px;
+                    &:hover{
+                        color:$aHover;
+                    }
+                }
+
+            }
+        }
+    }
+}
+//快捷列
+.fastlink {
+    width: 50px;
+    position: fixed;
+    left: 0px;
+    top: 145px;
+    transition: .4s;
+    z-index: 99;
+    @media(max-width: 767px) {
+        display: none
+    }
+    .fastlink_btn {
+        width: 30px;
+        position: absolute;
+        top: 0px;
+        right: -30px;
+        a {
+            text-align: center;
+            background-color: #000;
+            font-weight: bold;
+            display: block;
+            color: #fff;
+            padding: 5px 0px;
+            text-decoration: none;
+            width: 30px;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+    .fastlink_btn2 {
+        float: left;
+        width: 30px;
+        position: absolute;
+        top: 0px;
+        right: -30px;
+        display: none;
+        a {
+            text-align: center;
+            background-color: #000;
+            font-weight: bold;
+            display: block;
+            color: #fff;
+            padding: 5px 0;
+            text-decoration: none;
+            width: 30px;
+            &:hover {
+                text-decoration: none
+            }
+        }
+    }
+    ul {
+        margin: 0 0 0 50px;
+        padding: 0px;
+        background-color: #000;
+        text-align: center;
+        list-style: none;
+        li {
+            margin: 0;
+            a {
+                display: block;
+                padding: 10px 5px;
+                text-align: center;
+                color: #fff;
+                font-size: 0.875em;
+                background-color: #000;
+                width: 50px;
+                position: relative;
+                transition: .2s;
+                &:hover {
+                    text-decoration: none;
+                    background-color: #666;
+                    width: 175px;
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        top: 13px;
+                        left: 50px;
+                        width: 130px;
+                        font-size: 1.25em;
+                        text-align: left;
+                    }
+                }
+                &.group01:hover {
+                    &:before {
+                        content: '新聞稿';
+                    }
+                }
+                &.group02:hover {
+                    &:before {
+                        content: '業務專區';
+                    }
+                }
+                &.group03:hover {
+                    &:before {
+                        content: '勞動統計';
+                    }
+                }
+                &.group04:hover {
+                    &:before {
+                        content: '服務專區';
+                    }
+                }
+                &.group05:hover {
+                    &:before {
+                        content: '常見問答';
+                    }
+                }
+                &.group06:hover {
+                    &:before {
+                        content: '熱門推薦';
+                    }
+                }
+                &.group07:hover {
+                    &:before {
+                        content: '勞動部所屬機關';
+                    }
+                }
+                &.group08:hover {
+                    &:before {
+                        content: '主題網站';
+                    }
+                }
+                img {
+                    width: 25px;
+                    height: 25px;
+                    display: block;
+                    margin: 0 0 5px 10px;
+                }
+            }
+        }
+        &:last-child {
+            margin: 0;
+        }
+    }
+}
+// 影片燈箱區
+.movie_lightbox {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 999999;
+    .moviebox {
+        width: 60%;
+        margin: 5% auto;
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 35px 25px;
+        position: relative;
+        @media(max-width: 767px) {
+            width: 80%;
+        }
+    }
+    .close {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+    .movie {
+        margin: 30px 0 0;
+        width: 100%;
+        height: 400px;
+        iframe {
+            width: 100%;
+            height: 400px;
+        }
+        embed {
+            width: 100%;
+            height: 400px;
+        }
+    }
+}

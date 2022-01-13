@@ -1,0 +1,111 @@
+// 按鈕設定
+$btn-font-color:$color-word;
+$btn-border:darken($color-default, 5);
+$btn-padding:.5em 2em;
+$btn-radius:6px;
+// 按鈕外框
+.btn_grp {
+    text-align: center;
+    padding: 15px 0;
+}
+// 按鈕的共用設定
+@mixin btn_setting($btn-bg:$color-default, $btn-font-color:$btn-font-color) {
+    background: $btn-bg;
+    border: 1px solid darken($btn-bg, 0);
+    color: $btn-font-color;
+    @include border-radius($btn-radius);
+    &:hover {
+        background: darken($btn-bg, 10);
+        border: 1px solid darken($btn-bg, 10);
+        cursor: pointer;
+        color: #FFF;
+    }
+    &:focus {
+        background: darken($btn-bg, 20);
+        border: 1px solid darken($btn-bg, 20);
+        cursor: pointer;
+        outline: 0;
+        color: #FFF;
+        box-shadow: 0 0px 0px 2px $aFocus !important;
+    }
+    &.active {
+        background: darken($btn-bg, 10);
+        cursor: pointer;
+    }
+}
+
+// 按鈕預設陰影
+%btn {
+    font-size: $font-size;
+    touch-action: manipulation;
+    background-image: none; //修正firefox
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    white-space: nowrap;
+    line-height: normal;
+    width: auto;
+    padding: $btn-padding;
+    min-width: 80px;
+    width: auto !important;
+    margin: .25em 2px;
+}
+
+.btn {
+    @extend %btn;
+    @include btn_setting();
+    &:hover,
+    &:focus {
+        color: $btn-font-color;
+        outline: none;
+    }
+}
+//按鈕顏色
+//@include btn_setting(按鈕顏色,字的顏色);
+.btn-green {
+    @extend %btn;
+    @include btn_setting($color-green, #FFF);
+}
+
+.btn-blue {
+    @extend %btn;
+    @include btn_setting($color-blue, #FFF);
+}
+
+.btn-yellow {
+    @extend %btn;
+    @include btn_setting($color-yellow, #FFF);
+}
+
+.btn-orange {
+    @extend %btn;
+    @include btn_setting($color-orange, #FFF);
+}
+
+.btn-red {
+    @extend %btn;
+    @include btn_setting($color-red, #FFF);
+}
+
+.btn-purple {
+    @extend %btn;
+    @include btn_setting($color-purple, #FFF);
+}
+
+// 按鈕大小
+.btn-xl {
+    font-size: $font-size * 1.5; //24px
+}
+
+.btn-lg {
+    font-size: $font-size * 1.25; //20px
+}
+
+.btn-sm {
+    font-size: $font-size * .938; //15px
+}
+
+.btn-xs {
+    font-size: $font-size * .75; //12px
+}
