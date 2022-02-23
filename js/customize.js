@@ -293,10 +293,10 @@ $(".accordion_grounp .accordionblock").each(function() {
         function accordion3(e) {
             if (_ullist.is(':visible')) {
                 _ullist.slideUp();
-                _word.text('展開').addClass('close');
+                _word.text('open').addClass('close');
             } else {
                 _ullist.slideDown();
-                _word.text('收合').removeClass('close');
+                _word.text('close').removeClass('close');
             }
         }
         _accordionItem3.click(accordion3);
@@ -328,4 +328,11 @@ $(function() {
             $('#aC').focus(); /*#aC 是中間定位點的id*/
         }
     });
+})
+// 新增
+$(function(){
+    // 條件查詢
+    $('.condition_searchbtn').click(function() {
+        $('.condition_searchblock').stop().slideToggle();
+    })
 })
