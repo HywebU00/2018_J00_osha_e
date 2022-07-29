@@ -23,7 +23,7 @@
         @include border-radius(4px);
         &:hover,
         &:focus, &.active {
-            background: $color-blue;
+            background: $primaryColor;
             color: #fff;
         }
     }
