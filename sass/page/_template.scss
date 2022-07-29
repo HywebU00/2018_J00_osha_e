@@ -273,38 +273,39 @@ a{
     position: relative;
     margin: 20px 0 25px 0;
     padding: 0;
-    background-color: #fff;
-    .title{
+    background: rgb(227, 237, 242);
+    background: linear-gradient(45deg, rgba(227, 237, 242, 1) 0%, rgba(210, 226, 233, 1) 100%);
+    .title {
         font-size: 1.375em;
         background-color: $primaryColor;
         color: #fff;
         padding: 15px 10px;
         position: relative;
-        margin: 0;
+        margin: 0 0 5px;
         text-align: center;
         border-bottom: 2px solid #ccc;
     }
 
     ul {
         margin: 0;
-        padding: 0;
+         padding: 15px 20px;
         li {
             list-style-type: none;
             margin: 0;
             padding: 0;
             font-size: 1.063em;
             a {
-                border-bottom: 1px solid #CCC;
-                background-color: darken($primaryColor, 18);
-                color: #fff;
+                border-bottom: 1px solid #fff;
+                color: darken($primaryColor, 18);
                 padding: 10px 20px;
                 display: block;
                 text-decoration: none;
                 @include transition (all, 0.5s, ease);
                 &:hover,
                 &:focus {
-                    background-color: $primaryColor;
+                    background-color: #fff;
                     text-decoration: none;
+                    color: darken($primaryColor, 18);
                 }
             }
             &:last-child a {
