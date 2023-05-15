@@ -341,12 +341,12 @@ $(function() {
     // 跑馬燈
     if ($('.marquee').length > 0) {
         $('.marquee ul').slick({
-            dots: false,
+             dots: false,
             infinite: true,
-            vertical:false,
+            vertical: true,
             verticalSwiping: true,
-            speed: 10000,
-            autoplaySpeed: 3000,
+            speed: 300,
+            autoplaySpeed: 8000,
             slidesToShow: 1,
             slidesToScroll: 1,
             autoplay: true,
